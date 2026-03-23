@@ -1,0 +1,17 @@
+<div class="home-container">
+  <div class="home-card">
+    <h2>Wind Server</h2>
+
+    <div class="servers-section">
+      @if (loadingServers) {
+        <p class="muted">Loading servers...</p>
+      } @else if (serverError) {
+        <p class="error">{{ serverError }}</p>
+      } @else {
+        <p>{{ serverMessage }}</p>
+      }
+    </div>
+
+    <button class="btn-danger" (click)="logout()">Logout</button>
+  </div>
+</div>

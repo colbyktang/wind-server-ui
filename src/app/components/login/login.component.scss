@@ -1,0 +1,110 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.auth-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  transition: background 0.25s;
+
+  h2 {
+    margin: 0 0 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--text-secondary);
+  }
+
+  input {
+    padding: 0.6rem 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+    background: var(--input-bg);
+    color: var(--text-primary);
+    transition: border-color 0.2s, background 0.25s, color 0.25s;
+
+    &:focus {
+      outline: none;
+      border-color: var(--input-focus-border);
+    }
+
+    &.invalid {
+      border-color: var(--error-text);
+    }
+  }
+}
+
+.error {
+  color: var(--error-text);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.error-banner {
+  background: var(--error-bg);
+  color: var(--error-banner-text);
+  border: 1px solid var(--error-border);
+  border-radius: 4px;
+  padding: 0.6rem 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--btn-primary-bg);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover:not(:disabled) {
+    background: var(--btn-primary-hover);
+  }
+
+  &:disabled {
+    background: var(--btn-primary-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.switch-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
