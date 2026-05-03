@@ -38,7 +38,11 @@ export class LoginComponent {
         this.router.navigate(['/home']);
       },
       error: (err) => {
-        this.errorMessage = err.error?.detail ?? 'Login failed. Please try again.';
+        if (err.status === 429) {
+          this.errorMessage = 'Too many login attempts. Please wait a moment before trying again.';
+        } else {
+          this.errorMessage = err.error?.detail ?? 'Login failed. Please try again.';
+        }
         this.loading = false;
       }
     });

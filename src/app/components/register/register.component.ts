@@ -57,7 +57,11 @@ export class RegisterComponent {
         setTimeout(() => this.router.navigate(['/login']), 1500);
       },
       error: (err) => {
-        this.errorMessage = err.error?.detail ?? 'Registration failed. Please try again.';
+        if (err.status === 429) {
+          this.errorMessage = 'Too many registration attempts. Please wait a moment before trying again.';
+        } else {
+          this.errorMessage = err.error?.detail ?? 'Registration failed. Please try again.';
+        }
         this.loading = false;
       }
     });
